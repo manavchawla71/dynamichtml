@@ -10,13 +10,16 @@ fetch("https://api.jsonbin.io/v3/b/65d06319266cfc3fde8b6fc1")
       buttons.appendChild(countrybutton);
       countrybutton.addEventListener("click", () => {
         // Clear previous state list
-        stateslist.innerHTML = "";
+        stateslist.innerHTML = "Data Loading from backend ...";
+        setTimeout(() => {
+          stateslist.innerHTML = "";
+          countryData.states.map((state) => {
+            const stateItem = document.createElement("li");
+            stateItem.textContent = state;
+            stateslist.appendChild(stateItem);
+          });
+        }, 1000);
         // Iterate over the states of the selected country
-        countryData.states.map((state) => {
-          const stateItem = document.createElement("li");
-          stateItem.textContent = state;
-          stateslist.appendChild(stateItem);
-        });
       });
     });
   });
