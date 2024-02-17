@@ -1,7 +1,7 @@
 const buttons = document.getElementById("buttons");
 const stateslist = document.getElementById("states");
 
-fetch("https://api.jsonbin.io/v3/b/65d05a9edc74654018a5f0ab")
+fetch("https://api.jsonbin.io/v3/b/65d06319266cfc3fde8b6fc1")
   .then((response) => response.json())
   .then((data) => {
     data.record.record.forEach((countryData) => {
